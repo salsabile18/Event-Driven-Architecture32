@@ -1,6 +1,7 @@
 package ma.enset.comptecqrses.commands.controllers.aggregates;
 
 
+<<<<<<< HEAD
 import ma.enset.comptecqrses.commands.controllers.AccountCommandController;
 import ma.enset.comptecqrses.commonapi.commands.CreateAccountCommand;
 import ma.enset.comptecqrses.commonapi.commands.CreditAccountCommand;
@@ -12,6 +13,12 @@ import ma.enset.comptecqrses.commonapi.events.AccountCreditedEvent;
 import ma.enset.comptecqrses.commonapi.events.AccountDebitedEvent;
 import ma.enset.comptecqrses.commonapi.exceptions.AmountNegativeException;
 import ma.enset.comptecqrses.commonapi.exceptions.BalanceNotSufficientException;
+=======
+import ma.enset.comptecqrses.commonapi.commands.CreateAccountCommand;
+import ma.enset.comptecqrses.commonapi.enums.AccountStatus;
+import ma.enset.comptecqrses.commonapi.events.AccountActivatedEvent;
+import ma.enset.comptecqrses.commonapi.events.AccountCreatedEvent;
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -42,8 +49,13 @@ public class AccountAggregate {
         AggregateLifecycle.apply(new AccountCreatedEvent(
                 createAccountCommand.getId(),
                 createAccountCommand.getInitialBalance(),
+<<<<<<< HEAD
                 createAccountCommand.getCurrency(),
                 AccountStatus.CREATED));
+=======
+                createAccountCommand.getCurrency()
+        ));
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
     }
 
 
@@ -55,12 +67,18 @@ public class AccountAggregate {
          this.status=AccountStatus.CREATED;
          AggregateLifecycle.apply(new AccountActivatedEvent(
                  event.getId(),
+<<<<<<< HEAD
                  AccountStatus.ACTIVATED));
+=======
+                 AccountStatus.ACTIVATED
+         ));
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
     }
     @EventSourcingHandler
     public void on(AccountActivatedEvent event){
         this.status=event.getStatus();
     }
+<<<<<<< HEAD
 
     @CommandHandler
     public void handle(CreditAccountCommand command){
@@ -92,4 +110,6 @@ public class AccountAggregate {
     public  void on(AccountDebitedEvent event){
         this.balance+=event.getAmount();
     }
+=======
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
 }

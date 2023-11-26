@@ -2,10 +2,16 @@ package ma.enset.comptecqrses.commands.controllers;
 
 
 import lombok.AllArgsConstructor;
+<<<<<<< HEAD
 import ma.enset.comptecqrses.commonapi.commands.CreditAccountCommand;
 import ma.enset.comptecqrses.commonapi.commands.DebitAccountCommand;
 import ma.enset.comptecqrses.commonapi.dtos.CreditAccountRequestDTO;
 import ma.enset.comptecqrses.commonapi.dtos.DebitAccountRequestDTO;
+=======
+import ma.enset.comptecqrses.commonapi.commands.CreateAccountCommand;
+import ma.enset.comptecqrses.commonapi.dtos.CreateAccountRequestDTO;
+import org.axonframework.commandhandling.CommandBus;
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.springframework.http.HttpStatus;
@@ -22,6 +28,7 @@ import java.util.stream.Stream;
 public class AccountCommandController {
     private CommandGateway commandGateway;
     private EventStore eventStore;
+<<<<<<< HEAD
     @PutMapping("/credit")
     public CompletableFuture<String>  creditAccount(@RequestBody CreditAccountRequestDTO request){
        /* CompletableFuture<String> commandResponse = commandGateway.send(new CreateAccountCommand(
@@ -42,6 +49,14 @@ public class AccountCommandController {
                 request.getAccountId(),
                 request.getAmount(),
                 request.getCurrency()
+=======
+    @PostMapping("/create")
+    public CompletableFuture<String>  createAccount(@RequestBody CreateAccountRequestDTO request){
+        CompletableFuture<String> commandResponse = commandGateway.send(new CreateAccountCommand(
+                UUID.randomUUID().toString(),
+                request.getInitialBalance(),
+                request.getCurrency()
+>>>>>>> f1b6456d203d210715198235e67fc7f98cda7158
         ));
         return commandResponse;
     }
