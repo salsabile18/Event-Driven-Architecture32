@@ -53,6 +53,3 @@ Cette application a été développée pour permettre la gestion avancée de com
 
 Les contributions sont les bienvenues! Si vous souhaitez contribuer à l'amélioration de cette application, veuillez soumettre une Pull Request.
 
-## Licence
-
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
