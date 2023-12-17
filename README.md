@@ -41,7 +41,6 @@ Cette application a été développée pour permettre la gestion avancée de com
 
 
 ## Testing in localhost and postman 
-![image](https://github.com/salsabile18/Event-Driven-Architecture32/assets/100244944/dd8d256d-0aa6-49e0-b490-d52a40d4630d)
 ![image](https://github.com/salsabile18/Event-Driven-Architecture32/assets/100244944/bfed79d9-e836-4ef8-99db-ac5b818cf93b)
 ![image](https://github.com/salsabile18/Event-Driven-Architecture32/assets/100244944/bbe8d02e-74f4-4c3f-a73c-2fcad1ba8002)
 ![image](https://github.com/salsabile18/Event-Driven-Architecture32/assets/100244944/2889aabf-4531-4937-8da4-7aca5bd258fa)
